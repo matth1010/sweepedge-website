@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SweepEdge - AI-Powered Algorithmic Trading</title>
+    <meta name="description" content="Institutional-grade AI trading system for cryptocurrency markets. Automated execution, advanced risk management, proven edge.">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="logo.png">
+
+    <style>
+        :root {
+            --primary: #1a365d;
+            --secondary: #00d4ff;
+            --accent: #10b981;
+            --bg-dark: #0f172a;
+            --bg-card: #1e293b;
+            --text: #f1f5f9;
+            --text-muted: #94a3b8;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg-dark);
+            color: var(--text);
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--secondary);
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 32px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, var(--text) 0%, var(--secondary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--secondary) 0%, #0891b2 100%);
+            color: var(--bg-dark);
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Stats Section */
+        .stats {
+            padding: 60px 0;
+            background: var(--bg-card);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 48px;
+            font-weight: 700;
+            color: var(--secondary);
+            margin-bottom: 8px;
+        }
+
+        .stat-item p {
+            color: var(--text-muted);
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--secondary);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--bg-card);
+        }
+
+        .how-it-works h2 {
+            text-align: center;
+            font-size: 40px;
+            margin-bottom: 60px;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .step {
+            flex: 1;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--secondary) 0%, #0891b2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--bg-dark);
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--text-muted);
+            font-size: 15px;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .cta-section h2 {
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .cta-section p {
+            color: var(--text-muted);
+            font-size: 18px;
+            margin-bottom: 40px;
+        }
+
+        /* Disclaimer */
+        .disclaimer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+
+        .disclaimer p {
+            color: var(--text-muted);
+            font-size: 12px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        footer .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        footer p {
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        footer a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 24px;
+        }
+
+        footer a:hover {
+            color: var(--secondary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 36px; }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .features-grid { grid-template-columns: 1fr; }
+            .steps { flex-direction: column; gap: 40px; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo"><img src="logo.png" alt="SweepEdge" style="height: 32px; vertical-align: middle; margin-right: 10px;">SweepEdge</div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <h1>AI-Powered Trading,<br>Institutional Edge</h1>
+            <p>Automated algorithmic trading system that identifies high-probability liquidity sweeps in cryptocurrency markets. Built by quants, powered by AI.</p>
+            <a href="https://calendly.com/sweep-edge" class="cta-button">Schedule a Call</a>
+        </div>
+    </section>
+
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Automated Trading</p>
+                </div>
+                <div class="stat-item">
+                    <h3>3</h3>
+                    <p>Asset Classes</p>
+                </div>
+                <div class="stat-item">
+                    <h3>AI</h3>
+                    <p>Signal Scoring</p>
+                </div>
+                <div class="stat-item">
+                    <h3>2x</h3>
+                    <p>Max Leverage</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why SweepEdge?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Liquidity Sweep Detection</h3>
+                    <p>Proprietary algorithms identify institutional stop hunts and liquidity grabs before reversal moves.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered Scoring</h3>
+                    <p>Machine learning models score each setup, filtering for only the highest-probability trades.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Automated Execution</h3>
+                    <p>Lightning-fast order execution with intelligent position sizing and risk management.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Risk Management</h3>
+                    <p>Dynamic position sizing, loss streak protection, and automatic kill switches protect capital.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Multi-Timeframe Analysis</h3>
+                    <p>Analyzes market structure across multiple timeframes for confluence-based entries.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Real-Time Alerts</h3>
+                    <p>Discord and Telegram integration for instant trade notifications and performance updates.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Market Scanning</h3>
+                    <p>Continuously monitors BTC, ETH, and SOL perpetuals for liquidity sweep patterns.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Scoring</h3>
+                    <p>Each setup is scored based on 15+ factors including volume, structure, and timing.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Risk Calculation</h3>
+                    <p>Dynamic position sizing based on account equity and current market conditions.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Execution</h3>
+                    <p>Automated entry, take-profit targets, and trailing stops manage the trade to completion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <h2>Ready to Learn More?</h2>
+            <p>Schedule a 30-minute call to discuss investment opportunities.</p>
+            <a href="https://calendly.com/sweep-edge" class="cta-button">Book Your Call</a>
+        </div>
+    </section>
+
+    <section class="disclaimer">
+        <div class="container">
+            <p><strong>Important Disclaimer:</strong> This is not an offer to sell securities. Past performance does not guarantee future results. Trading involves substantial risk of loss. Only invest what you can afford to lose. This opportunity is only available to accredited investors as defined by SEC Regulation D. SweepEdge does not provide investment advice.</p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 SweepEdge Trading. All rights reserved.</p>
+            <div>
+                <a href="mailto:investors@sweepedge.com">Contact</a>
+                <a href="https://linkedin.com/company/sweepedge">LinkedIn</a>
+                <a href="https://twitter.com/sweepedge">Twitter</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
